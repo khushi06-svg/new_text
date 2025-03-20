@@ -1,0 +1,55 @@
+{% schema %}
+{
+  "name": "Title and Description",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Your Section Title"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Section Description",
+      "default": "A short description of the section."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Title and Description",
+      "category": "Text"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="title-description-section">
+  {% if section.settings.title != blank %}
+    <h2>{{ section.settings.title }}</h2>
+  {% endif %}
+
+  {% if section.settings.description != blank %}
+    <p>{{ section.settings.description }}</p>
+  {% endif %}
+</div>
+
+<style>
+  .title-description-section {
+    text-align: center; /* Center-align the content */
+    padding: 20px; /* Add some padding */
+  }
+
+  .title-description-section h2 {
+    font-size: 2em; /* Adjust font size as needed */
+    margin-bottom: 10px; /* Add space below the title */
+  }
+
+  .title-description-section p {
+    font-size: 1em; /* Adjust font size as needed */
+    color: #666; /* Adjust color as needed */
+  }
+
+  /* Add more styling as needed */
+</style>
+
